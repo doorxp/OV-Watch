@@ -69,9 +69,9 @@
 		"version": "0.2.0",
 		"configurations": [
 			{
-				"name": "Debug LVGL demo with LLVM",
+				"name": "Debug WatchOS with LLVM",
 				"type": "cppdbg",
-				"miDebuggerPath":"${userHome}/.vscode/extensions/ms-vscode.cpptools-1.20.5-darwin-x64/debugAdapters/lldb-mi/bin/lldb-mi",
+				"MIMode": "lldb",
 				"request": "launch",
 		        "program": "${workspaceFolder}/bin/main",
 				"args": [],
