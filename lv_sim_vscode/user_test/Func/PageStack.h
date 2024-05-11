@@ -9,7 +9,7 @@ extern "C" {
 
 #define MAX_DEPTH 6
 
-typedef long long int StackData_t;
+typedef void* StackData_t;
 
 typedef struct
 {

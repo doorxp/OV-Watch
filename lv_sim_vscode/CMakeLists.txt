@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 17)#C17
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_definitions(-Wno-int-conversion)
+add_definitions(-Wno-pointer-sign)
+add_definitions(-Wno-incompatible-pointer-types-discards-qualifiers)
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 

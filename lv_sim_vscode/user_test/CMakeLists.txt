@@ -5,4 +5,3 @@ file(GLOB_RECURSE SOURCES   "./*.c" "Screens/Src/*.c")
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(CMAKE_CXX_FLAGS "-O3")
-SET(CMAKE_C_FLAGS "-Wint-conversion")

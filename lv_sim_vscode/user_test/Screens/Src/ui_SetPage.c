@@ -45,13 +45,13 @@ void ui_event_SetPage(lv_event_t * e)
 			if(lv_indev_get_gesture_dir(lv_indev_get_act()) == LV_DIR_RIGHT)
       {
 				user_Stack_Pop(&ScrRenewStack);
-				if(ScrRenewStack.Data[ScrRenewStack.Top_Point-1] == (long long int)&ui_HomePage)
-				{
+        if (ScrRenewStack.Data[ScrRenewStack.Top_Point - 1] == (StackData_t)&ui_HomePage)
+        {
 					ui_HomePage_screen_init();
 					lv_scr_load_anim(ui_HomePage,LV_SCR_LOAD_ANIM_MOVE_RIGHT,100,0,true);
 				}
-				else if(ScrRenewStack.Data[ScrRenewStack.Top_Point-1] == (long long int)&ui_MenuPage)
-				{
+        else if (ScrRenewStack.Data[ScrRenewStack.Top_Point - 1] == (StackData_t)&ui_MenuPage)
+        {
 					ui_MenuPage_screen_init();
 					lv_scr_load_anim(ui_MenuPage,LV_SCR_LOAD_ANIM_MOVE_RIGHT,100,0,true);
 				}
@@ -343,5 +343,3 @@ void ui_SetPage_screen_init(void)
     lv_obj_add_event_cb(ui_PasswordPanel, ui_event_PasswordPanel, LV_EVENT_ALL, NULL);
 
 }
-
-

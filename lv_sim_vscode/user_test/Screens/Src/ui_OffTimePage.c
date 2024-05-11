@@ -35,8 +35,8 @@ void ui_event_LTimeSetOKButton(lv_event_t * e)
     {
       ui_LTimeSelected = lv_roller_get_selected(ui_LTimeSetRoller);
 			ui_LTimeValue = ui_LTimeOptions[ui_LTimeSelected];
-			if(ScrRenewStack.Data[ScrRenewStack.Top_Point-1] == (long long int)&ui_HomePage)
-			{
+      if (ScrRenewStack.Data[ScrRenewStack.Top_Point - 1] == (StackData_t)&ui_HomePage)
+      {
 				ui_HomePage_screen_init();
 				lv_scr_load_anim(ui_HomePage,LV_SCR_LOAD_ANIM_MOVE_RIGHT,0,0,true);
 			}
@@ -56,8 +56,8 @@ void ui_event_TTimeSetOKButton(lv_event_t * e)
     {
 			ui_TTimeSelected = lv_roller_get_selected(ui_TTimeSetRoller);
       ui_TTimeValue = ui_LTimeOptions[ui_TTimeSelected];
-			if(ScrRenewStack.Data[ScrRenewStack.Top_Point-1] == (long long int)&ui_HomePage)
-			{
+      if (ScrRenewStack.Data[ScrRenewStack.Top_Point - 1] == (StackData_t)&ui_HomePage)
+      {
 				ui_HomePage_screen_init();
 				lv_scr_load_anim(ui_HomePage,LV_SCR_LOAD_ANIM_MOVE_RIGHT,0,0,true);
 			}
@@ -209,6 +209,3 @@ void ui_TOffTimeSetPage_screen_init(void)
     lv_obj_add_event_cb(ui_TTimeSetOKButton, ui_event_TTimeSetOKButton, LV_EVENT_ALL, NULL);
 
 }
-
-
-
