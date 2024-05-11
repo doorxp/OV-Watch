@@ -13,7 +13,7 @@ uint8_t ui_SPO2Value = 99;
 ///////////////////// SCREENS ////////////////////
 void ui_SPO2Page_screen_init(void)
 {
-    uint8_t value_strbuf[5];
+    char value_strbuf[5];
 
     ui_SPO2Page = lv_obj_create(NULL);
     lv_obj_clear_flag(ui_SPO2Page, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
@@ -58,5 +58,3 @@ void ui_SPO2Page_screen_init(void)
     lv_obj_set_style_text_font(ui_SPO2Icon, &ui_font_iconfont34, LV_PART_MAIN | LV_STATE_DEFAULT);
 
 }
-
-
