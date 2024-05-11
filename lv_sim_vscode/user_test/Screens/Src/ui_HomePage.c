@@ -82,7 +82,10 @@ void ui_event_HomePage(lv_event_t * e)
     {
 
       user_Stack_Pop(&ScrRenewStack);
+      ui_MenuPage = NULL;
       _ui_screen_change(&ui_MenuPage, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 100, 0, &ui_MenuPage_screen_init);
+      // ui_MenuPage_screen_init();
+      // lv_scr_load_anim(ui_MenuPage, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 0, 0, true);
       user_Stack_Push(&ScrRenewStack,(long long int)&ui_HomePage);
       user_Stack_Push(&ScrRenewStack,(long long int)&ui_MenuPage);
     }
@@ -613,7 +616,7 @@ void ui_HomePage_screen_init(void)
     lv_obj_set_style_border_opa(ui_DownBGPanel, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
 		//events
-		lv_obj_add_event_cb(ui_HomePage, ui_event_HomePage, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_HomePage, ui_event_HomePage, LV_EVENT_GESTURE, NULL);
     lv_obj_add_event_cb(ui_NFCButton, ui_event_NFCButton, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BLEButton, ui_event_BLEButton, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_PowerButton, ui_event_PowerButton, LV_EVENT_ALL, NULL);
@@ -655,4 +658,3 @@ void ui_PowerPage_screen_init(void)
 
 
 }
-
